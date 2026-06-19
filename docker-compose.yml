@@ -1,0 +1,8 @@
+services:
+  analytics-service:
+    build: .
+    ports:
+      - "8084:8084"
+    environment:
+      JWT_SECRET: ${JWT_SECRET:-changeme-replace-in-production-256bit-secret-key!!}
+      SURVEY_SERVICE_URL: ${SURVEY_SERVICE_URL:-http://localhost:8083}

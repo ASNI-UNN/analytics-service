@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: analytics-service
+
+server:
+  port: ${SERVER_PORT:8084}
+
+jwt:
+  secret: ${JWT_SECRET:changeme-replace-in-production-256bit-secret-key!!}
+
+services:
+  survey:
+    url: ${SURVEY_SERVICE_URL:http://localhost:8083}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
